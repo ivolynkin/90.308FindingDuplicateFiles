@@ -93,6 +93,9 @@ public class FindDuplicateFilesTest {
         fileC.delete();
     }
 
+   /*
+    * Test for getFileConten
+    */
     @Test
     public void testGetFileConten(){
         FindDuplicateFiles findDF = new  FindDuplicateFiles(subDir1);
@@ -101,12 +104,20 @@ public class FindDuplicateFilesTest {
         assertEquals("Compare File content", result, expected);
      }
     
+    /*
+     * Test for equalFlieConten
+     */
+    
     @Test
     public void testEqualFileContent(){
         FindDuplicateFiles findDF = new  FindDuplicateFiles(subDir1);
         assertTrue("File A and File C are equal", findDF.equalFileContent(fileA, fileC));
         assertFalse("File A and file B are not equal", findDF.equalFileContent(fileA, fileB));
     }
+    
+   /*
+    * Test with one mocked file in mocked sourece directory
+    */
     
     @Test
     public void testMockOneEmptyFilesSoureDirectory() {
@@ -122,6 +133,10 @@ public class FindDuplicateFilesTest {
        assertEquals("Compare results", expected, result);
     }
     
+     /*
+    * Test with two mocked files in mocked sourece directory
+    */
+    
     @Test
     public void testMockTwoEmptyFilesSoureDirectory() {
       
@@ -136,7 +151,9 @@ public class FindDuplicateFilesTest {
        assertEquals("Compare results", expected, result);
     }
     
-    
+     /*
+    * Test with two mocked files in mocked sub directories
+    */
     
     @Test
     public void testMockTwoEmptyFilesSubDirectories(){
@@ -158,6 +175,11 @@ public class FindDuplicateFilesTest {
        String result = fd.findDuplicate();
        assertEquals("Compare results", expected, result);
     }
+    
+     /*
+    * Test with three files in mocked sub directories
+    */
+    
     
     @Test
     public void testMockThreeFiles(){

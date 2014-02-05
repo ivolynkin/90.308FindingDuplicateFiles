@@ -109,7 +109,7 @@ public class FindDuplicateFiles {
  
     public static void main(String[] args) {
         
-        //String dir = "C:\\Users\\Ivan\\Temp\\";
+        
         System.out.println("Enter directory to find duplicates");
         Scanner input = new Scanner(System.in);
         String dir = input.next();
