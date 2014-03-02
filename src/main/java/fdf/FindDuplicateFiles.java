@@ -35,14 +35,12 @@ public class FindDuplicateFiles {
 
         File[] listOfFiles = directory.listFiles();
 
-        for (int i = 0; i < listOfFiles.length; i++) {
-            if (listOfFiles[i].isFile()) {
-                list.add(listOfFiles[i]);
-
-            } else if (listOfFiles[i].isDirectory()) {
-                fillFileList(listOfFiles[i]);
+        for (File file : listOfFiles) {
+            if (file.isFile()) {
+                list.add(file);
+            } else if (file.isDirectory()) {
+                fillFileList(file);
             }
-
         }
     }
 
@@ -59,7 +57,7 @@ public class FindDuplicateFiles {
             while (sc.hasNextLine()) {
                 str = sc.nextLine();
             }
-        }  catch (Exception e) {
+        } catch (Exception e) {
             System.err.println("Caught Exception: " + e.getMessage());
         }
 
@@ -102,6 +100,7 @@ public class FindDuplicateFiles {
                 }
             }
         }
+        
         if (result.equals("")) {
             result = "No files are duplicated";
         }

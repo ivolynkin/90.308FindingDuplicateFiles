@@ -20,8 +20,6 @@ import java.io.BufferedWriter;
 public class FindDuplicateFilesTest {
     
     private File sourceDir = mock(File.class);
-    private File A = mock(File.class);
-    private File B = mock(File.class);
     private File subDir1 = mock(File.class);
     private File subDir2 = mock(File.class);
     private File subDir3 = mock(File.class);
@@ -38,22 +36,12 @@ public class FindDuplicateFilesTest {
        when(sourceDir.isDirectory()).thenReturn(Boolean.TRUE);
        when(sourceDir.isFile()).thenReturn(Boolean.FALSE);
        when(sourceDir.getPath()).thenReturn("");
-       
-       when(A.isFile()).thenReturn(Boolean.TRUE);
-       when(A.isDirectory()).thenReturn(Boolean.FALSE);
-       when(A.getName()).thenReturn("A");
-              
-       when(B.isFile()).thenReturn(Boolean.TRUE);
-       when(B.isDirectory()).thenReturn(Boolean.FALSE);
-       when(B.getName()).thenReturn("B");
-       
+        
        when(subDir1.isDirectory()).thenReturn(Boolean.TRUE);
        when(subDir1.isFile()).thenReturn(Boolean.FALSE);
        when(subDir1.getPath()).thenReturn("");
        when(subDir1.length()).thenReturn((long)1);
-       //File[] listSubDir1 = { fileA };
-       //when(subDir1.listFiles()).thenReturn(listSubDir1);
-       
+              
        when(subDir2.isDirectory()).thenReturn(Boolean.TRUE);
        when(subDir2.isFile()).thenReturn(Boolean.FALSE);
        when(subDir2.getPath()).thenReturn("");
@@ -66,6 +54,8 @@ public class FindDuplicateFilesTest {
        
        
     }
+   
+    
     
     private void setFileContent(File file, String content){
         try{
